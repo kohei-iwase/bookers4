@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 #最初のページ
   root 'books#about'
   resources :books, only: [:new, :create, :index, :show]
-  resources :users, only: [:new, :show,	  :edit,  :update]
+  resources :users, only: [:new, :show,	  :edit,  :update, :index]
 end

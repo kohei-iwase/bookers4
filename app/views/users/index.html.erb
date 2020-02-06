@@ -1,0 +1,35 @@
+ <html>
+ <head>
+  <%= render "layouts/header" %>
+  <title>Bookers</title>
+  <br>
+
+ <h1>Users</h1>
+</head>
+<body>
+   <table>
+   		<thead>
+   			<tr>
+   				<strong>
+            <th>image</th>
+      			<th>name</th>
+      			<th>Introduction</th>
+      			</strong>
+      			<th colspan="2"></th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  				<% @users.each do |user| %>
+    			<tr>
+            <td></td>
+	      		<td><%= user.name %></td>
+	      		<td><%= user.introduction %></td>
+	      		<td>
+	      			<%= link_to "Show", "/users/#{user.id}" %>
+	      		</td>
+	      	</tr>
+	      	<% end %>
+	    </tbody>
+	</table>
+</body>
+</html>
