@@ -8,7 +8,12 @@
       </li>
       <li class="">
 
-        <%= link_to 'Users', "#" %>
+        <%= link_to 'login', new_user_session_path %>
+      </li>
+
+      <li class="">
+
+        <%= link_to 'Users', "user_path(current_user.id)" %>
       </li>
 
        <li class="">
