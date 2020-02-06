@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<div class="container">
+<%= render "layouts/header" %>
+<div class="profile-container">
+	<div class="row">
+	      <div class="col-md-3" style="background-color:orange;">
+
+<h2>New book</h2>
+
+<!-- form_for部分 -->
+<%= form_for(@book, url: '/books') do |f| %>
+<!-- エラー部分 -->
+<%= render 'layouts/error_messages', model: f.object %>
+    <h5>Title</h5>
+    <%= f.text_field :title %>
+	<h5>Opinion</h5>
+    <%= f.text_area :opinion %>
+ <br>
+ <button type="button" class="btn btn-primary btn-block active">
+    <%= f.submit 'Create Book' %></button>
+<% end %>
+</div>
+</div>
+</div>
+</body>
+</html>

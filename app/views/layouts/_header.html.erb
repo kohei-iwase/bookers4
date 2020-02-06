@@ -1,35 +1,38 @@
-<div id="header">
-<div class="container">
-<div class="row" style="background-color:black;">
-  <div class ="col-md-4"style="color:white;">
-    <h3>Bookers</h3>
+  <div class="row" style="background-color:black;">
+    <div class ="col-md-3">
+      <h3 class="title" style="color:white;">Bookers</h3>
+    </div>
+    <div class="col-md-8" style="color:gray;">
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+         <li class="">
+          <span class="glyphicon glyphicon-home" aria-hidden="true">
+            <%= link_to 'Home', "#" %>
+          </span>
+        </li>
+        <li class="">
+          <span class="glyphicon glyphicon-user" aria-hidden="true">
+            <%= link_to 'Users', users_path %></span>
+        </li>
+        <li class="">
+          <span class="glyphicon glyphicon-book" aria-hidden="true">
+            <%= link_to 'Books', books_path %></span>
+        </li>
+        <li class="">
+          <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+            <%= link_to "logout", destroy_user_session_path, method: :delete %>
+          </span>
+        </li>
+      <% else %>
+        <li class="">
+          <span class="glyphicon glyphicon-log-in" aria-hidden="true">
+            <%= link_to 'login', new_user_session_path %></span>
+        </li>
+        <li class="">
+          <span class="glyphicon glyphicon-log-in" aria-hidden="true">
+            <%= link_to 'signup', new_user_session_path %></span>
+        </li>
+      <% end %>
+    </ul>
+    </div>
   </div>
-  <div class="col-md-8" style="color:gray;">
-  <ul class="nav navbar-nav navbar-right">
-       <li class="">
-        <span class="glyphicon glyphicon-home" aria-hidden="true">
-        <%= link_to 'Home', "#" %></span>
-      </li>
-      <li class="">
-        <span class="glyphicon glyphicon-user" aria-hidden="true">
-        <%= link_to 'Users', users_path %></span>
-      </li>
-      <li class="">
-        <span class="glyphicon glyphicon-book" aria-hidden="true">
-        <%= link_to 'Books', books_path %></span>
-      </li>
-      <li class="">
-        <span class="glyphicon glyphicon-log-in" aria-hidden="true">
-        <%= link_to 'login', new_user_session_path %></span>
-      </li>
-      <li class="">
-        <span class="glyphicon glyphicon-log-out" aria-hidden="true">
-        <%= link_to "logout", destroy_user_session_path, method: :delete %>
-        </span>
-      </li>
-  </ul>
-</div>
-</div>
-</div>
-</div>
-<row>
