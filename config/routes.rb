@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   root 'books#about'
   resources :books, only: [:new, :create, :index, :show]
   resources :users, only: [:new, :show,	  :edit,  :update, :index]
+
+  get "books/profile"
+  get "users/profile"
 end

@@ -1,35 +1,41 @@
  <html>
  <head>
   <title>Bookers</title>
-  <%= render "layouts/header" %>
- <h1>Books</h1>
 </head>
 <body>
-   <table>
+  <div class="container">
+  <div class="row" style="background-color:black;">
+  <%= render "layouts/header" %>
+  </div>
+    <div class="row">
+      <div class="col-md-2" style="background-color:orange;">
+        <h2>サイドバー</h2>
+      </div>
+      <div class="col-md-10" style="background-color:green">
+         <h1>Books</h1>
+     <table class="table table-striped">
    		<thead>
    			<tr>
    				<strong>
+            <th></th>
       			<th>Title</th>
       			<th>Opinion</th>
-      			</strong>
-      			<th colspan="4"></th>
-  			</tr>
+      		</strong>
+  		   </tr>
   		</thead>
   		<tbody>
-  				<% @books.each do |book| %>
-    			<tr>
+  			<% @books.each do |book| %>
+    		  <tr>
             <td>
             <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %></td>
-	      		<td><%= book.title %></td>
+	      		<td><%= link_to book.title, "/books/#{book.id}" %></td>
 	      		<td><%= book.opinion %></td>
-	      		<td>
-	      			<%= link_to "Show", "/books/#{book.id}" %>
-	      		</td>
-	      		<td><%= link_to "Edit", "/books/#{book.id}/edit" %></td>
-	      		<td><%= link_to "Destroy", "/books/#{book.id}", method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
 	      	</tr>
-	      	<% end %>
+	      <% end %>
 	    </tbody>
-	</table>
+	   </table>
+   </div>
+   </div>
+ </div>
 </body>
 </html>
