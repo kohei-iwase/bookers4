@@ -1,0 +1,27 @@
+<html>
+ <head>
+  <title>Book detail</title>
+  <%= render "layouts/header" %>
+ <h1>Books</h1>
+</head>
+<body>
+   <table>
+   		<thead>
+   			<tr>
+   				<strong>
+      			<th>Title</th>
+      			<th>Opinion</th>
+      			</strong>
+      			<th colspan="3"></th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  				<%= attachment_image_tag @post_image, :image %>
+    			<tr>
+	      		<td><%= book.title %></td>
+	      		<td><%= book.opinion %></td>
+	      	</tr>
+	    </tbody>
+	</table>
+</body>
+</html>
