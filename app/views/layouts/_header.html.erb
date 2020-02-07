@@ -7,7 +7,7 @@
       <% if user_signed_in? %>
          <li class="">
           <span class="glyphicon glyphicon-home" aria-hidden="true">
-            <%= link_to 'Home', "#" %>
+            <%= link_to 'Home', user_path(current_user.id) %>
           </span>
         </li>
         <li class="">
@@ -29,8 +29,8 @@
             <%= link_to 'login', new_user_session_path %></span>
         </li>
         <li class="">
-          <span class="glyphicon glyphicon-log-in" aria-hidden="true">
-            <%= link_to 'signup', new_user_session_path %></span>
+          <span class="glyphicon glyphicon-new-window" aria-hidden="true">
+            <%= link_to 'signup', new_user_registration_path %></span>
         </li>
       <% end %>
     </ul>

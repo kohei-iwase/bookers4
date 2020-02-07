@@ -1,15 +1,9 @@
- <html>
- <head>
-  <title>Bookers</title>
-</head>
-<body>
-  <div class="container">
-  <div class="row" style="background-color:black;">
-  <%= render "layouts/header" %>
-  </div>
-    <div class="row">
-      <div class="col-md-2" style="background-color:orange;">
-        <h2>サイドバー</h2>
+<html>
+    <body>
+        <span class="container">
+            <%= render "layouts/header" %>
+            <%= render 'layouts/user', user: @user %>
+            <%= render 'layouts/new', book: @book %>
       </div>
       <div class="col-md-10" style="background-color:green">
          <h1>Users</h1>
