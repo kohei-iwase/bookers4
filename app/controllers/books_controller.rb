@@ -10,15 +10,17 @@ class BooksController < ApplicationController
     	if @book.save
     	redirect_to books_path
         else
-        render:new
+        render:index
         end
     end
 
     def index
     	@books = Book.all
+        @book =Book.new
     end
     def show
         @book = Book.find(params[:id])
+        @user = User.find(params[:id])
     end
 
     def destroy
@@ -30,5 +32,7 @@ private
 	def book_params
 		params.require(:book).permit(:title, :opinion)
 	end
-
+    def user_params
+        params.require(:user).permit(:name, :profile_image_id ,:introduction)
+    end
 end

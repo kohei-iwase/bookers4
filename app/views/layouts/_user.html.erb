@@ -3,8 +3,8 @@
 	                   <div class="col-md-3" style="background-color:orange;">
                         <h2>User info</h2>
                         <div class="user-edit-image">
-                        <%= attachment_image_tag @user, :profile_image_id, :fill, 60, 60, class: "img-circle pull-left profile-thumb",fallback: "no_image.jpg" %>
-                      </div>    <!-- fallback:noimageいれる-->
+                        <%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb",fallback: "no_image.jpg" %>
+                      </div>
                                 <br>
                                     <table class="table table-striped">
 	                                   <tr>
@@ -18,11 +18,11 @@
                                     </table>
 	                               <% if @user.id == current_user.id %>
                                     <div class ="row">
-                                    <div class= "col-xs-12">
-                                    <div class ="col-xs-12 btn btn-default">
-                                    <span class="glyphicon glyphicon-wrench" aria-hidden="true">
-                                    <%= link_to "",edit_user_path(@user),class: "pull-right" %></span>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <% end %>
+                                        <div class= "col-xs-12">
+                                        <div class ="col-xs-12 btn btn-default">
+                                        <span class="glyphicon glyphicon-wrench" aria-hidden="true">
+                                        <%= link_to "edit",edit_user_path(@user),class: "pull-right" %></span>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <% end %>

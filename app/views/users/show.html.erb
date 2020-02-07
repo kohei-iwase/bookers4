@@ -20,7 +20,7 @@
                         <tr>
                     <% @books.each do |book| %>
                         <td>
-                    <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img" %></td>
+                    <%= attachment_image_tag book.user, :profile_image, :fill, 1, 1, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %></td>
                         <td><%= link_to book.title, "/books/#{book.id}" %></td>
                         <td><%= book.opinion %></td>
                     </tr>
