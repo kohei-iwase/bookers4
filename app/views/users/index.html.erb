@@ -2,7 +2,6 @@
     <body>
         <span class="container">
             <%= render "layouts/header" %>
-            <%= render 'layouts/user', user: @user %>
             <%= render 'layouts/new', book: @book %>
       </div>
       <div class="col-md-10" style="background-color:green">
@@ -20,7 +19,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td><%= attachment_image_tag book.user, :profile_image, :fill, 1, 1, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %></td>
+            <td><%= attachment_image_tag @book.user, :profile_image, :fill, 1, 1, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %></td>
             <td><%= user.name %></td>
             <td><%= link_to "Show", "/users/#{user.id}" %></td>
           </tr>

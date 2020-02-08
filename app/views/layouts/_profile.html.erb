@@ -6,11 +6,31 @@
 <div class="profile-container">
 	<div class="row">
 	      <div class="col-md-3" style="background-color:orange;">
+<h2>User info</h2>
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img" %>
+    <!-- fallback:noimageいれる-->
+<br>
+<table class="table table-striped">
+	<tr>
+    <th>name</th>
+    <th><%= user.name %></th>
+    </tr>
+	<tr>
+		<th>introduction</th>
+		<th><%= user.introduction %></th>
+	</tr>
+</table>
+	 <% if user.id == current_user.id %>
+        <p><button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>Download</button>
+            <button><span class="glyphicon glyphicon-wrench" aria-hidden="true">
+        	<%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-default" %></span></button>
+        </p>
+    <% end %>
 
 <h2>New book</h2>
 
 <!-- form_for部分 -->
-<%= form_for(@book, url: '/books') do |f| %>
+<%= form_for(book, url: '/books') do |f| %>
 <!-- エラー部分 -->
 <%= render 'layouts/error_messages', model: f.object %>
     <h5>Title</h5>
