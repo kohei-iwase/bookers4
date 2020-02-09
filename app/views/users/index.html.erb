@@ -19,6 +19,7 @@
       </thead>
       <tbody>
         <% @users.each do |user| %>
+          <%= render 'layouts/error_messages', model: f.object %>
           <tr>
             <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format:'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %></td>
             <td><%= user.name %></td>

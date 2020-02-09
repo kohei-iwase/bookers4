@@ -2,6 +2,9 @@
     <body>
         <span class="container">
             <%= render "layouts/header" %>
+            <% flash.each do |msg_class, msg| %>
+        <div class="alert alert-<%= msg_class %>"><%= msg %></div>
+      <% end %>
             <%= render 'layouts/new', book: @book %>
       <div class="col-md-9" style="background-color:green">
          <h1>Books</h1>

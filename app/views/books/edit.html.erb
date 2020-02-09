@@ -1,19 +1,18 @@
-     <%= render "layouts/header" %>
-<div crass="container">
-	<div crass="row">
-	<h1>Editing book</h1>
-	</div>
+<%= render "layouts/header" %>
+	<div crass="container">
 		<div crass="row">
-		<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
-		<%= render 'layouts/error_messages', model: f.object %>
-		<div>
-
-			<div crass="row">Title</div>
-	    		<div crass="row"><%= f.text_field :title %></div>
-			<div crass="row">Opinion</div>
-    <div crass="row"><%= f.text_area :opinion %></div>
-
-    <div crass="row"><%= f.submit 'Update Book' %></div>
-<div crass="row"><%= link_to "Show", "/books/#{@book.id}" %>|<%= link_to "Back", :back %></div>
-   <% end %>
-</div>
+			<h1>Editing book</h1>
+		</div>
+		<div crass="row">
+			<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
+		</div>
+				<div crass="row">Title</div>
+			    <div crass="row"><%= f.text_field :title %></div>
+				<div crass="row">Opinion</div>
+		    	<div crass="row"><%= f.text_area :opinion %></div>
+				<div crass="row"><%= f.submit 'Update Book' %></div>
+				<div crass="row"><%= link_to "Show", "/books/#{@book.id}" %>
+					|<%= link_to "Back", :back %></div>
+   				<% end %>
+	</div>

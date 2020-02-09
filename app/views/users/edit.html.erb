@@ -8,6 +8,7 @@
               <h2>User info</h2>
                 <div class="form-body">
                   <%= form_for(@user) do |f| %>
+                  <%= render 'layouts/error_messages', model: f.object %>
                     <div class="row">
                       <div class="col-md-2">
                         Name
@@ -19,7 +20,6 @@
                       <div class="user-edit-image">
                         <%= attachment_image_tag @user, :profile_image, :fill, 50 , 50, class: "pull-left",fallback: "no_image.jpg" %>
                       </div>
-                        Image
                           <br>
                             <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
                 </div>

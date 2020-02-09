@@ -44,3 +44,6 @@
     </ul>
     </div>
   </div>
+   <% flash.each do |msg_class, msg| %>
+        <div class="alert alert-<%= msg_class %>"><%= msg %></div>
+      <% end %>
