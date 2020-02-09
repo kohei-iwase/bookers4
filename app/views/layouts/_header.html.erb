@@ -25,6 +25,14 @@
         </li>
       <% else %>
         <li class="">
+          <span class="glyphicon glyphicon-home" aria-hidden="true">
+            <%= link_to 'Home', user_path(current_user.id) %></span>
+        </li>
+        <li class="">
+          <span class="glyphicon glyphicon-link" aria-hidden="true">
+            <%= link_to 'About', about_path %></span>
+        </li>
+        <li class="">
           <span class="glyphicon glyphicon-log-in" aria-hidden="true">
             <%= link_to 'login', new_user_session_path %></span>
         </li>
@@ -36,3 +44,6 @@
     </ul>
     </div>
   </div>
+   <% flash.each do |msg_class, msg| %>
+        <div class="alert alert-<%= msg_class %>"><%= msg %></div>
+      <% end %>
