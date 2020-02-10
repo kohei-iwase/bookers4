@@ -2,6 +2,7 @@
     <body>
         <span class="container">
             <%= render "layouts/header" %>
+            <%= render 'layouts/user', user: @user %>
             <%= render 'layouts/new', book: @book %>
       <div class="col-md-9" style="background-color:green">
          <h1>Book detail</h1>
@@ -20,7 +21,7 @@
         <tr>
           <td><%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format:'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %></td>
             <td><%= @book.title %></td>
-            <td><%= @book.opinion %></td>
+            <td><%= @book.body %></td>
                    <% if @book.user == current_user %>
             <td><%= link_to "Edit", edit_book_path(@book), crass:"btn btn-primary btn-block active" %></td>
             <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>

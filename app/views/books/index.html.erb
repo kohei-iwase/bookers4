@@ -22,7 +22,7 @@
             <td>
             <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %></td>
 	      		<td><%= link_to book.title, "/books/#{book.id}" %></td>
-	      		<td><%= book.opinion %></td>
+	      		<td><%= book.body %></td>
 	      	</tr>
 	      <% end %>
 	    </tbody>

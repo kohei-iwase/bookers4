@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
     @books =@user.books.reverse_order
-  	@book =Book.new
-  end
+    @book = Book.find(params[:id])
+   end
   def edit
     @user = User.find(params[:id])
   end
