@@ -3,6 +3,7 @@ class BooksController < ApplicationController
     end
     def top
     end
+     #before_action :authenticate_user!
     def new
     	@book =Book.new
     end
