@@ -12,6 +12,8 @@ class BooksController < ApplicationController
     	if @book.save
     	redirect_to books_path(@book.id),notice: "post successfully"
         else
+        @user = current_user
+        @books = Book.all
         render :index
         end
     end
@@ -36,6 +38,7 @@ class BooksController < ApplicationController
     def show
         @user = current_user
         @book = Book.find(params[:id])
+        @book =Book.new
     end
 
     def destroy
