@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit,  :update, :index]
 
   get "home/about" => "books#about"
+  get "/books" => "books#create"
 end
