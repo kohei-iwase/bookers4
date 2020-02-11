@@ -1,8 +1,11 @@
         <span class="container">
+          <span class="row">
             <%= render "layouts/header" %>
+            <div class="col-xs-3" style="background-color:green">
             <%= render 'layouts/user', user: @user %>
             <%= render 'layouts/new', book: @book %>
-            <div class ="col-md-9" style="background-color: green;">
+          </div>
+            <div class ="col-xs-9" style="background-color: green;">
                 <span crass="books-container">
                     <h1>Books</h1>
                     <table class="table table-striped">
@@ -28,3 +31,4 @@
                 </span>
             </div>
         </span>
+    </span>
