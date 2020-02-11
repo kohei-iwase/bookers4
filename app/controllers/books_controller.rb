@@ -38,9 +38,8 @@ before_action :correct_user, only: [:edit, :update]
 
     end
     def show
-        @user = current_user
         @book = Book.find(params[:id])
-        @book =Book.new
+        @user = current_user
     end
 
     def destroy

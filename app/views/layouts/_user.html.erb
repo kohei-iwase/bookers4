@@ -1,6 +1,3 @@
-                <div class="container">
-	               <div class="row">
-	                   <div class="col-xs-3" style="background-color:orange;">
                         <h2>User info</h2>
                         <div class="user-edit-image">
                         <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format:'jpeg', class: "profile-thumb", fallback: "no_image.jpg" %>
@@ -17,12 +14,8 @@
 	                                   </tr>
                                     </table>
 	                               <% if user.id == current_user.id %>
-                                    <div class ="row">
-                                        <div class= "col-xs-12">
-                                        <div class ="col-xs-12 btn btn-default">
+                                        <div class ="col-xs-3 btn btn-default">
                                         <span class="glyphicon glyphicon-wrench" aria-hidden="true">
                                         <%= link_to "edit",edit_user_path(user),class: "pull-right" %></span>
-                                        </div>
-                                        </div>
                                         </div>
                                         <% end %>
