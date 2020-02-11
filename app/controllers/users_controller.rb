@@ -8,6 +8,9 @@ before_action :correct_user, only: [:edit, :update]
    end
   def edit
     @user = User.find(params[:id])
+    if @user != current_user
+    redirect_to root_path
+    end
   end
 
   def update
@@ -16,7 +19,7 @@ before_action :correct_user, only: [:edit, :update]
   	redirect_to user_path(@user.id),notice: "update successfully"
     else
     render :edit,
-    notice: "update srror"
+    notice: "update error"
     end
   end
   def index
