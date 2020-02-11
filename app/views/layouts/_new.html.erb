@@ -2,7 +2,7 @@
 <div class= "col-xs-12">
 <h2>New book</h2>
 <!-- form_for部分 -->
-<%= form_for(book, url: '/books') do |f| %>
+<%= form_for(@book, url: '/books') do |f| %>
 <!-- エラー部分 -->
 <%= render 'layouts/error_messages', model: f.object %>
     <h5>Title</h5>

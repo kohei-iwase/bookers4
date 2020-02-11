@@ -15,7 +15,8 @@ before_action :correct_user, only: [:edit, :update]
   	if @user.update(user_params)
   	redirect_to user_path(@user.id),notice: "update successfully"
     else
-    render :edit
+    render :edit,
+    notice: "update srror"
     end
   end
   def index

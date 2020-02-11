@@ -14,7 +14,6 @@ before_action :authenticate_user!, :except=>[:about, :top]
     	redirect_to books_path(@book.id),notice: "post successfully"
         else
         render :show
-        @book =Book.new
         end
     end
     def edit
@@ -25,7 +24,7 @@ before_action :authenticate_user!, :except=>[:about, :top]
         if @book.update(book_params)
         redirect_to book_path(@book.id),notice: "update successfully"
         else
-        render :edit
+        render :edit, notice: "update error"
         end
     end
 
@@ -36,6 +35,7 @@ before_action :authenticate_user!, :except=>[:about, :top]
 
     end
     def show
+        @book =Book.new
         @book = Book.find(params[:id])
         @user = current_user
     end
