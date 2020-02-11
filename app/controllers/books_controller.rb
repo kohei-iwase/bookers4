@@ -23,7 +23,7 @@ before_action :authenticate_user!, :except=>[:about, :top]
     def edit
         @book = Book.find(params[:id])
         if @book.user != current_user
-        redirect_to root_path
+        redirect_to books_path
         end
     end
     def update
