@@ -13,9 +13,8 @@ before_action :authenticate_user!, :except=>[:about, :top]
     	if @book.save
     	redirect_to books_path(@book.id),notice: "post successfully"
         else
-        @user = current_user
-        @books = Book.all
-        render :index
+        render :show
+        @book =Book.new
         end
     end
     def edit
