@@ -21,7 +21,8 @@
                         <tr>
                     <% @books.each do |book| %>
                         <td>
-                    <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %></td>
+                    <%= link_to user_path(@user.id), target: "_blank" do %>
+                    <%= attachment_image_tag book.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "pull-left profile-thumb" ,fallback: "no_image.jpg" %><% end %></td>
                         <td><%= link_to book.title, "/books/#{book.id}" %></td>
                         <td><%= book.body %></td>
                     </tr>
