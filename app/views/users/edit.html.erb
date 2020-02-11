@@ -2,7 +2,7 @@
       <%= render "layouts/header" %>
         <div class="profile-container">
           <div class="row">
-            <div class="col-md-3" style="background-color:orange;">
+            <div class="col-md-3">
               <h2>User info</h2>
                   <%= form_for(@user,url:"/users/#{@user.id}") do |f| %>
                   <%= render 'layouts/error_messages', model: f.object %>
