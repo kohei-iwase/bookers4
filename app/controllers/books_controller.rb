@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
 before_action :authenticate_user!, :except=>[:about, :top]
-before_action :correct_user, only: [:edit, :update]
     def about
     end
     def top
