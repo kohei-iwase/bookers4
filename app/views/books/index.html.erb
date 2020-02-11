@@ -1,5 +1,7 @@
         <span class="container">
             <%= render "layouts/header" %>
+            <%= render 'layouts/user', user: @user %>
+            <%= render 'layouts/new', book: @book %>
 
       <div class="col-md-9" style="background-color:green">
          <h1>Books</h1>
