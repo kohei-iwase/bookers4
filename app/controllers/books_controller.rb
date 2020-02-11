@@ -9,11 +9,14 @@ before_action :authenticate_user!, :except=>[:about, :top]
     end
     def create
         @book =Book.new(book_params)
- 		@book.user_id = current_user.id
+ 		@user = @book.user
+        @book.user_id = current_user.id
     	if @book.save
     	redirect_to books_path(@book.id),notice: "post successfully"
         else
-        render :show
+        @user = current_user
+        @books = Book.all
+        render :index, notice: "update error"
         end
     end
     def edit
